@@ -9,25 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        NavigationStack {
-            Form {
-                Section("Roky") {
-                    NavigationLink("2024") {
-                        MothView(year: 2024)
-                    }
-                }
-                
-                Section("Přidat") {
-                    Button {
-                        
-                    } label: {
-                        Image(systemName: "plus")
-                            .frame(maxWidth: .infinity)
-                    }
-                }
-            }
-            .navigationTitle("iExpense")
-        }
+        Text("temp")
     }
 }
 
