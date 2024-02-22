@@ -9,13 +9,25 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        NavigationStack {
+            Form {
+                Section("Roky") {
+                    NavigationLink("2024") {
+                        MothView(year: 2024)
+                    }
+                }
+                
+                Section("Přidat") {
+                    Button {
+                        
+                    } label: {
+                        Image(systemName: "plus")
+                            .frame(maxWidth: .infinity)
+                    }
+                }
+            }
+            .navigationTitle("iExpense")
         }
-        .padding()
     }
 }
 
