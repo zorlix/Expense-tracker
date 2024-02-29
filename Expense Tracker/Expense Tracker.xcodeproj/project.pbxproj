@@ -11,6 +11,12 @@
 		5108665D2B879D5E0065B72F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5108665C2B879D5E0065B72F /* ContentView.swift */; };
 		5108665F2B879D5F0065B72F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5108665E2B879D5F0065B72F /* Assets.xcassets */; };
 		510866622B879D5F0065B72F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 510866612B879D5F0065B72F /* Preview Assets.xcassets */; };
+		51BFA5712B8F9AAC00BB7B58 /* Expense.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BFA5702B8F9AAC00BB7B58 /* Expense.swift */; };
+		51BFA5732B8FA13A00BB7B58 /* AddExpenseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BFA5722B8FA13A00BB7B58 /* AddExpenseView.swift */; };
+		51BFA5752B8FA80800BB7B58 /* YearView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BFA5742B8FA80800BB7B58 /* YearView.swift */; };
+		51BFA57B2B8FD13A00BB7B58 /* DayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BFA57A2B8FD13A00BB7B58 /* DayView.swift */; };
+		51BFA57D2B8FE08900BB7B58 /* MonthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BFA57C2B8FE08900BB7B58 /* MonthView.swift */; };
+		51BFA59D2B90F44400BB7B58 /* Plans.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BFA59C2B90F44400BB7B58 /* Plans.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +25,12 @@
 		5108665C2B879D5E0065B72F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		5108665E2B879D5F0065B72F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		510866612B879D5F0065B72F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		51BFA5702B8F9AAC00BB7B58 /* Expense.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Expense.swift; sourceTree = "<group>"; };
+		51BFA5722B8FA13A00BB7B58 /* AddExpenseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExpenseView.swift; sourceTree = "<group>"; };
+		51BFA5742B8FA80800BB7B58 /* YearView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YearView.swift; sourceTree = "<group>"; };
+		51BFA57A2B8FD13A00BB7B58 /* DayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayView.swift; sourceTree = "<group>"; };
+		51BFA57C2B8FE08900BB7B58 /* MonthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthView.swift; sourceTree = "<group>"; };
+		51BFA59C2B90F44400BB7B58 /* Plans.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plans.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +47,7 @@
 		5108664E2B879D5E0065B72F = {
 			isa = PBXGroup;
 			children = (
+				51BFA59C2B90F44400BB7B58 /* Plans.swift */,
 				510866592B879D5E0065B72F /* Expense Tracker */,
 				510866582B879D5E0065B72F /* Products */,
 			);
@@ -52,7 +65,12 @@
 			isa = PBXGroup;
 			children = (
 				5108665A2B879D5E0065B72F /* Expense_TrackerApp.swift */,
+				51BFA5702B8F9AAC00BB7B58 /* Expense.swift */,
 				5108665C2B879D5E0065B72F /* ContentView.swift */,
+				51BFA5722B8FA13A00BB7B58 /* AddExpenseView.swift */,
+				51BFA5742B8FA80800BB7B58 /* YearView.swift */,
+				51BFA57C2B8FE08900BB7B58 /* MonthView.swift */,
+				51BFA57A2B8FD13A00BB7B58 /* DayView.swift */,
 				5108665E2B879D5F0065B72F /* Assets.xcassets */,
 				510866602B879D5F0065B72F /* Preview Content */,
 			);
@@ -137,8 +155,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				51BFA57B2B8FD13A00BB7B58 /* DayView.swift in Sources */,
+				51BFA5712B8F9AAC00BB7B58 /* Expense.swift in Sources */,
 				5108665D2B879D5E0065B72F /* ContentView.swift in Sources */,
+				51BFA5752B8FA80800BB7B58 /* YearView.swift in Sources */,
+				51BFA59D2B90F44400BB7B58 /* Plans.swift in Sources */,
 				5108665B2B879D5E0065B72F /* Expense_TrackerApp.swift in Sources */,
+				51BFA5732B8FA13A00BB7B58 /* AddExpenseView.swift in Sources */,
+				51BFA57D2B8FE08900BB7B58 /* MonthView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
