@@ -13,7 +13,6 @@ struct ContentView: View {
     @Query(sort: \Expense.date) var expenses: [Expense]
     
     @State private var showingAddExpenseView = false
-    @State private var isTestViewActive = false
     
     var body: some View {
         NavigationStack {
