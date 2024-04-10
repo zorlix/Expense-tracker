@@ -16,16 +16,47 @@ struct EditView: View {
     
     var body: some View {
         Form {
-            Section("Item") {
-                TextField("Item", text: $viewModel.item)
-            }
-            
-            Section("Type") {
-                Picker("Type", selection: $viewModel.type) {
-                    Text("Expense").tag("Expense")
-                    Text("Income").tag("Income")
+            Picker("Default", selection: $viewModel.expense.defaultExpense) {
+                Text("Custom").tag(nil as DefaultExpense?)
+                if viewModel.expense.defaultExpense == nil {
+                    Text("Default").tag(viewModel.defaults.defaults.first)
+                } else {
+                    Text("Default").tag(viewModel.expense.defaultExpense)
                 }
-                .pickerStyle(.segmented)
+            }
+            .pickerStyle(.segmented)
+            
+            if viewModel.expense.defaultExpense != nil {
+                Picker("Defaults", selection: $viewModel.expense.defaultExpense) {
+                    Text("None").tag(nil as DefaultExpense?)
+                    ForEach(viewModel.defaults.defaults) { item in
+                        Text(item.item).tag(Optional(item))
+                    }
+                }
+                
+                Section("Default values") {
+                    HStack {
+                        Text("Name:").bold()
+                        Text(viewModel.expense.defaultExpense?.item ?? "")
+                    }
+                    
+                    HStack {
+                        Text("Type:").bold()
+                        Text(viewModel.expense.defaultExpense?.type ?? "")
+                    }
+                }
+            } else {
+                Section("Item") {
+                    TextField("Item", text: $viewModel.item)
+                }
+                
+                Section("Type") {
+                    Picker("Type", selection: $viewModel.type) {
+                        Text("Expense").tag("Expense")
+                        Text("Income").tag("Income")
+                    }
+                    .pickerStyle(.segmented)
+                }
             }
             
             Section("Amount") {
@@ -56,7 +87,9 @@ struct EditView: View {
         }
         .navigationTitle("Edit Expense")
         .toolbar {
-            Button("Done") { isFocused = false }
+            if isFocused {
+                Button("Done") { isFocused = false }
+            }
         }
     }
     

@@ -8,7 +8,7 @@
 import Foundation
 
 @Observable
-class Counting {
+class Counting: Hashable {
     var startingDate = Date.now.addingTimeInterval(-(7*86400))
     var endingDate = Date.now
     
@@ -31,5 +31,13 @@ class Counting {
         balance = 0
         finished = false
         
+    }
+    
+    static func ==(lhs: Counting, rhs: Counting) -> Bool {
+        lhs.loaded == rhs.loaded
+    }
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(loaded)
     }
 }

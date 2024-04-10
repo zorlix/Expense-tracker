@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 extension EditView {
     @Observable
@@ -17,22 +18,32 @@ extension EditView {
         var amount: Int
         var date: Date
         
+        private(set) var defaults = Defaults()
+                
         func saveExpense() -> Expense {
             var tempExpense = expense
             tempExpense.id = UUID()
-            tempExpense.item = item
-            tempExpense.type = type
+            if let defaultSelected = expense.defaultExpense {
+                tempExpense.item = defaultSelected.item
+                tempExpense.type = defaultSelected.type
+            } else {
+                tempExpense.item = item
+                tempExpense.type = type
+            }
             tempExpense.amount = amount
             tempExpense.date = date
             return tempExpense
         }
         
-        init(expense: Expense, item: String, type: String, amount: Int, date: Date) {
+        init(expense: Expense, item: String, type: String, amount: Int, date: Date, defaults: Defaults = Defaults()) {
             self.expense = expense
             self.item = item
             self.type = type
             self.amount = amount
             self.date = date
+            self.defaults = defaults
+            
+            print("Edit")
         }
     }
 }

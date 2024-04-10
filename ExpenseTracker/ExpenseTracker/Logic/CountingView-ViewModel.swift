@@ -10,7 +10,7 @@ import Foundation
 extension CountingView {
     @Observable
     class ViewModel {
-        var expenses: [Expense]
+        private(set) var expenses: [Expense]
         var counting: Counting
         
         func calculate() {

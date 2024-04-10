@@ -53,11 +53,30 @@ extension ContentView {
             }
         }
         
+        // Total
+        var total: Int {
+            var exp = 0
+            var inc = 0
+            
+            for expense in expenses {
+                if expense.type == "Expense" {
+                    exp += expense.amount
+                } else if expense.type == "Income" {
+                    inc += expense.amount
+                }
+            }
+            
+            return inc - exp
+        }
+        
         // Navigation
-        var path = NavigationPath()
+        var navig = Navigation()
         
         // Calculations Class for Counting View
         var calculations = Counting()
+        
+        // Multiples (multiple entries)
+        var multiples = Multiples()
         
         // Logic
         func sort() {
@@ -67,7 +86,7 @@ extension ContentView {
         func newExpense() {
             let newExpense = Expense(id: UUID(), item: "", type: "Expense", amount: 0, date: .now)
             expenses.append(newExpense)
-            path.append(newExpense)
+            navig.path.append(newExpense)
             save()
             sort()
         }
@@ -95,17 +114,5 @@ extension ContentView {
             expenses.removeAll()
             save()
         }
-        
-        // Debug
-        #if DEBUG
-        func test() {
-            let example1 = Expense(id: UUID(), item: "Lunch", type: "Expense", amount: 150, date: .now)
-            let example2 = Expense(id: UUID(), item: "Money back", type: "Income", amount: 300, date: .now.addingTimeInterval(-86400))
-            expenses.append(example1)
-            expenses.append(example2)
-            save()
-            sort()
-        }
-        #endif
     }
 }

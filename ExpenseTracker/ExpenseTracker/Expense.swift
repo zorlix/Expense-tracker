@@ -12,7 +12,9 @@ struct Expense: Identifiable, Codable, Equatable, Hashable, Comparable {
     var item: String
     var type: String
     var amount: Int
+    var defaultExpense: DefaultExpense?
     var date: Date
+    
     
     static func ==(lhs: Expense, rhs: Expense) -> Bool {
         lhs.id == rhs.id
