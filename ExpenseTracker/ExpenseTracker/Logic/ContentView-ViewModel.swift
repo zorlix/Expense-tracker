@@ -31,6 +31,7 @@ extension ContentView {
             do {
                 let data = try JSONEncoder().encode(expenses)
                 try data.write(to: savePath, options: [.atomic, .completeFileProtection])
+                print("Saved")
             } catch {
                 print("Failed to save to documents directory: \(error.localizedDescription)")
             }
@@ -38,7 +39,7 @@ extension ContentView {
         
         // Migrate
         func migrate(old: DefaultExpense, new: String, type: String) {
-            let defaults = Defaults()
+            let  defaults = Defaults()
             
             let newDefault = DefaultExpense(id: UUID(), item: new, type: type)
             if let index = defaults.defaults.firstIndex(of: old) {
