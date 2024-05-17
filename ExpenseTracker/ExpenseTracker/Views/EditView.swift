@@ -2,7 +2,7 @@
 //  EditView.swift
 //  ExpenseTracker
 //
-//  Created by Josef Černý on 17.03.2024.
+//  Created by Zorlix on 17.03.2024.
 //
 
 import SwiftUI

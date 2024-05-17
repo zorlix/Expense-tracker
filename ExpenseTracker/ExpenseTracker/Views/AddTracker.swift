@@ -2,7 +2,7 @@
 //  AddTracker.swift
 //  ExpenseTracker
 //
-//  Created by Josef Černý on 21.03.2024.
+//  Created by Zorlix on 21.03.2024.
 //
 
 import SwiftUI

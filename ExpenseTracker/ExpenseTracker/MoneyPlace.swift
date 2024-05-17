@@ -2,7 +2,7 @@
 //  MoneyPlace.swift
 //  ExpenseTracker
 //
-//  Created by Josef Černý on 12.04.2024.
+//  Created by Zorlix on 12.04.2024.
 //
 
 import Foundation

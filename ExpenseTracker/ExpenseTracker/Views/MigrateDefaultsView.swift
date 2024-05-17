@@ -2,7 +2,7 @@
 //  MigrateDefaultsView.swift
 //  ExpenseTracker
 //
-//  Created by Josef Černý on 16.04.2024.
+//  Created by Zorlix on 16.04.2024.
 //
 
 import SwiftUI

@@ -2,7 +2,7 @@
 //  TrackingView-ViewModel.swift
 //  ExpenseTracker
 //
-//  Created by Josef Černý on 20.03.2024.
+//  Created by Zorlix on 20.03.2024.
 //
 
 import Foundation

@@ -2,7 +2,7 @@
 //  DefaultsView.swift
 //  ExpenseTracker
 //
-//  Created by Josef Černý on 18.03.2024.
+//  Created by Zorlix on 18.03.2024.
 //
 // NavigationIdentifier - 1
 

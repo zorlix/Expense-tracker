@@ -2,7 +2,7 @@
 //  MultiplesView-ViewModel.swift
 //  ExpenseTracker
 //
-//  Created by Josef Černý on 08.04.2024.
+//  Created by Zorlix on 08.04.2024.
 //
 
 import Foundation
