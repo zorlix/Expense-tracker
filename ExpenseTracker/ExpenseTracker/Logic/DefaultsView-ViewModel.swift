@@ -20,6 +20,10 @@ class DefaultsViewModel {
         defaults.save()
     }
     
+    func sort() {
+        defaults.defaults.sort()
+    }
+    
     func annull() {
         item = ""
         type = "Expense"

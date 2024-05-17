@@ -27,7 +27,9 @@ struct ContentView: View {
                 }
             }
             .navigationDestination(for: Multiple.self) { multiple in
-                SelectMultiple(multiple: multiple)
+                AddMultipleView(multiple: multiple) { array in
+                    viewModel.saveMultiple(array)
+                }
             }
             .navigationDestination(for: NavigationIdentifier.self) { identifier in
                 switch identifier.id {
@@ -39,6 +41,14 @@ struct ContentView: View {
                     CountingView(expenses: viewModel.expenses, counting: viewModel.calculations)
                 case 4:
                     AddMultiplesView(multiples: viewModel.multiples)
+                case 5:
+                    DiscrepancyView(total: viewModel.total) { expense in
+                        viewModel.saveDescipancy(from: expense)
+                    }
+                case 6:
+                    MigrateDefaultsView { newName, newType, oldDefault in
+                        viewModel.migrate(old: oldDefault, new: newName, type: newType)
+                    }
                 default:
                     EmptyView()
                 }
@@ -52,6 +62,8 @@ struct ContentView: View {
                         Button("Tracker", action: viewModel.navig.navTracking)
                         Button("Load data") { viewModel.importFile = true }
                         Button("Add multiple", action: viewModel.navig.navMultiple) 
+                        Button("Discrepancy", action: viewModel.navig.navDesc)
+                        Button("Migration", action: viewModel.navig.navMigr)
                         ShareLink(item: viewModel.savePath)
                     }
                 }
@@ -83,6 +95,7 @@ struct ContentView: View {
                 }
             }
             .onAppear(perform: viewModel.sort)
+            .onChange(of: viewModel.expenses, viewModel.checkForEmpty)
             .fileImporter(isPresented: $viewModel.importFile, allowedContentTypes: [.json]) { result in
                 switch result {
                 case .success(let fileURL):

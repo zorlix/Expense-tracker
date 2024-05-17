@@ -36,6 +36,30 @@ extension ContentView {
             }
         }
         
+        // Migrate
+        func migrate(old: DefaultExpense, new: String, type: String) {
+            let defaults = Defaults()
+            
+            let newDefault = DefaultExpense(id: UUID(), item: new, type: type)
+            if let index = defaults.defaults.firstIndex(of: old) {
+                defaults.defaults[index] = newDefault
+            }
+            defaults.save()
+            
+            if expenses.isEmpty == false {
+                for expense in expenses {
+                    if expense.item == old.item {
+                        let newExpense = Expense(id: UUID(), item: new, type: type, amount: expense.amount, defaultExpense: newDefault, date: expense.date)
+                        if let index = expenses.firstIndex(of: expense) {
+                            expenses[index] = newExpense
+                        }
+                    }
+                }
+                
+                save()
+            }
+        }
+        
         // Import data
         var importFile = false
         
@@ -93,7 +117,7 @@ extension ContentView {
         
         func saveReturned(original: Expense, incoming: Expense) {
             if let index = expenses.firstIndex(of: original) {
-                if original.id == incoming.id {
+                if original.id == incoming.id || incoming.item.isEmpty {
                     expenses.remove(at: index)
                 } else {
                     expenses[index] = incoming
@@ -103,10 +127,34 @@ extension ContentView {
             sort()
         }
         
+        func saveMultiple(_ array: [Expense]) {
+            for item in array {
+                expenses.append(item)
+            }
+            save()
+            sort()
+        }
+        
+        func saveDescipancy(from expense: Expense) {
+            expenses.append(expense)
+            save()
+            sort()
+        }
+        
         func deleteWithSwipe(at offsets: IndexSet) {
             for offset in offsets {
                 expenses.remove(at: offset)
                 save()
+            }
+        }
+        
+        func checkForEmpty() {
+            for expense in expenses {
+                if expense.item.isEmpty {
+                    if let index = expenses.firstIndex(of: expense) {
+                        expenses.remove(at: index)
+                    }
+                }
             }
         }
         

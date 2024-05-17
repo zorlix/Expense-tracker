@@ -7,10 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		514272692BCEDBB7000CE07F /* MigrateDefaultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514272682BCEDBB7000CE07F /* MigrateDefaultsView.swift */; };
 		5142E2BF2BC432FC003268B7 /* Multiples.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5142E2BE2BC432FC003268B7 /* Multiples.swift */; };
 		5142E2C12BC4347B003268B7 /* AddMultiplesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5142E2C02BC4347B003268B7 /* AddMultiplesView.swift */; };
 		5142E2C32BC43EAD003268B7 /* MultiplesView-ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5142E2C22BC43EAD003268B7 /* MultiplesView-ViewModel.swift */; };
 		5142E2C52BC45133003268B7 /* AddMultipleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5142E2C42BC45132003268B7 /* AddMultipleView.swift */; };
+		5142E3062BC998C4003268B7 /* DiscrepancyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5142E3052BC998C4003268B7 /* DiscrepancyView.swift */; };
+		5142E3082BC99A3A003268B7 /* MoneyPlace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5142E3072BC99A3A003268B7 /* MoneyPlace.swift */; };
 		5155559C2BA6EBF6003FB696 /* ExpenseTrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5155559B2BA6EBF6003FB696 /* ExpenseTrackerApp.swift */; };
 		5155559E2BA6EBF6003FB696 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5155559D2BA6EBF6003FB696 /* ContentView.swift */; };
 		515555A02BA6EBF7003FB696 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5155559F2BA6EBF7003FB696 /* Assets.xcassets */; };
@@ -34,10 +37,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		514272682BCEDBB7000CE07F /* MigrateDefaultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MigrateDefaultsView.swift; sourceTree = "<group>"; };
 		5142E2BE2BC432FC003268B7 /* Multiples.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Multiples.swift; sourceTree = "<group>"; };
 		5142E2C02BC4347B003268B7 /* AddMultiplesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMultiplesView.swift; sourceTree = "<group>"; };
 		5142E2C22BC43EAD003268B7 /* MultiplesView-ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MultiplesView-ViewModel.swift"; sourceTree = "<group>"; };
 		5142E2C42BC45132003268B7 /* AddMultipleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMultipleView.swift; sourceTree = "<group>"; };
+		5142E3052BC998C4003268B7 /* DiscrepancyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscrepancyView.swift; sourceTree = "<group>"; };
+		5142E3072BC99A3A003268B7 /* MoneyPlace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyPlace.swift; sourceTree = "<group>"; };
 		515555982BA6EBF6003FB696 /* ExpenseTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExpenseTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5155559B2BA6EBF6003FB696 /* ExpenseTrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseTrackerApp.swift; sourceTree = "<group>"; };
 		5155559D2BA6EBF6003FB696 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -98,6 +104,7 @@
 				51EA3A452BA9DEF70098DADF /* Defaults.swift */,
 				51EA3A542BAB8CF00098DADF /* Trackers.swift */,
 				5142E2BE2BC432FC003268B7 /* Multiples.swift */,
+				5142E3072BC99A3A003268B7 /* MoneyPlace.swift */,
 				515555B72BA6FC92003FB696 /* Components */,
 				515555B02BA6F457003FB696 /* Views */,
 				515555AF2BA6F44F003FB696 /* Logic */,
@@ -139,6 +146,8 @@
 				51EA3A4C2BAA6B820098DADF /* TrackingView.swift */,
 				51EA3A562BAC35110098DADF /* AddTracker.swift */,
 				5142E2C02BC4347B003268B7 /* AddMultiplesView.swift */,
+				5142E3052BC998C4003268B7 /* DiscrepancyView.swift */,
+				514272682BCEDBB7000CE07F /* MigrateDefaultsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -221,12 +230,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5142E3082BC99A3A003268B7 /* MoneyPlace.swift in Sources */,
 				5142E2BF2BC432FC003268B7 /* Multiples.swift in Sources */,
 				515555AA2BA6EC25003FB696 /* Expense.swift in Sources */,
 				51EA3A4F2BAADFED0098DADF /* TrackingView-ViewModel.swift in Sources */,
 				5155559E2BA6EBF6003FB696 /* ContentView.swift in Sources */,
 				515555B62BA6FC8A003FB696 /* ExpenseItemView.swift in Sources */,
 				515555B92BA71C88003FB696 /* Counting.swift in Sources */,
+				5142E3062BC998C4003268B7 /* DiscrepancyView.swift in Sources */,
 				515555B42BA6FBB0003FB696 /* CountingView.swift in Sources */,
 				515555AE2BA6F44A003FB696 /* ContentView-ViewModel.swift in Sources */,
 				515555AC2BA6EDC9003FB696 /* EditView.swift in Sources */,
@@ -238,6 +249,7 @@
 				51EA3A462BA9DEF70098DADF /* Defaults.swift in Sources */,
 				5142E2C32BC43EAD003268B7 /* MultiplesView-ViewModel.swift in Sources */,
 				5142E2C52BC45133003268B7 /* AddMultipleView.swift in Sources */,
+				514272692BCEDBB7000CE07F /* MigrateDefaultsView.swift in Sources */,
 				5155559C2BA6EBF6003FB696 /* ExpenseTrackerApp.swift in Sources */,
 				515555BB2BA721BB003FB696 /* CountingView-ViewModel.swift in Sources */,
 				51EA3A5B2BB09FC80098DADF /* Navigation.swift in Sources */,

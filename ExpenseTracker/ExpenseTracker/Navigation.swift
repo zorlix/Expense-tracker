@@ -17,6 +17,8 @@ struct NavigationIdentifier: Hashable {
 /// TrackingView - 2
 /// Calculations - 3
 /// Multiple - 4
+/// Discrepancy - 5
+/// Migration - 6
 
 @Observable class Navigation {
     var path = NavigationPath()
@@ -39,5 +41,14 @@ struct NavigationIdentifier: Hashable {
     /// Multiples
     func navMultiple() {
         path.append(NavigationIdentifier(id: 4))
+    }
+    
+    /// Discrepancy
+    func navDesc() {
+        path.append(NavigationIdentifier(id: 5))
+    }
+    
+    func navMigr() {
+        path.append(NavigationIdentifier(id: 6))
     }
 }

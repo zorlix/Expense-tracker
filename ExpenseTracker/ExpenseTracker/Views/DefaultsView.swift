@@ -32,9 +32,15 @@ struct DefaultsView: View {
             }
         }
         .navigationTitle("Defalts")
+        .onAppear(perform: viewModel.sort)
+        .onChange(of: viewModel.defaults.defaults, viewModel.sort)
         .toolbar {
-            NavigationLink("Add Default") {
-                AddDefault(viewModel: viewModel)
+            ToolbarItem(placement: .topBarTrailing) {
+                NavigationLink {
+                    AddDefault(viewModel: viewModel)
+                } label: {
+                    Image(systemName: "plus")
+                }
             }
         }
     }
@@ -52,7 +58,10 @@ struct AddDefault: View {
                 Text("Income").tag("Income")
             }
             Button("Save") {
-                viewModel.save()
+                if viewModel.item.isEmpty == false {
+                    viewModel.save()
+                    viewModel.sort()
+                }
                 dismiss()
             }
         }

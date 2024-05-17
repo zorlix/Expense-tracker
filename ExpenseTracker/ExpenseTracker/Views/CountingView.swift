@@ -13,8 +13,8 @@ struct CountingView: View {
     var body: some View {
         Form {
             Section("Parameters") {
-                DatePicker("Starting Date", selection: $viewModel.counting.startingDate)
-                DatePicker("Ending Date", selection: $viewModel.counting.endingDate)
+                DatePicker("Starting Date", selection: $viewModel.counting.startingDate, in: ...viewModel.counting.endingDate)
+                DatePicker("Ending Date", selection: $viewModel.counting.endingDate, in: viewModel.counting.startingDate...)
             }
             
             Section {
