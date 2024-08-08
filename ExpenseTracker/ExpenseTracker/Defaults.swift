@@ -2,55 +2,54 @@
 //  Defaults.swift
 //  ExpenseTracker
 //
-//  Created by Zorlix on 19.03.2024.
+//  Created by Josef Černý on 08.08.2024.
 //
 
 import Foundation
 
-struct DefaultExpense: Identifiable, Codable, Equatable, Hashable, Comparable {
-    var id: UUID
-    var item: String
+class Default: Identifiable, Codable, Equatable, Hashable, Comparable {
+    var id = UUID()
+    var name: String
     var type: String
     
-    static func ==(lhs: DefaultExpense, rhs: DefaultExpense) -> Bool {
+    static func ==(lhs: Default, rhs: Default) -> Bool {
         lhs.id == rhs.id
     }
     
-    static func <(lhs: DefaultExpense, rhs: DefaultExpense) -> Bool {
-        lhs.item < rhs.item
+    static func <(lhs: Default, rhs: Default) -> Bool {
+        lhs.name < rhs.name
+    }
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
     }
 }
 
-@Observable class Defaults {
-    var defaults = [DefaultExpense]()
+@Observable
+class Defaults {
+    var items: [Default]
     
     let savePath = URL.documentsDirectory.appending(path: "defaults.json")
+    
+    func save() {
+        do {
+            let encoded = try JSONEncoder().encode(items)
+            try encoded.write(to: savePath)
+            print("Saved default")
+        } catch {
+            print("Failed to save default (\(error.localizedDescription)).")
+        }
+    }
     
     init() {
         do {
             let data = try Data(contentsOf: savePath)
-            let decoded = try JSONDecoder().decode([DefaultExpense].self, from: data)
-            defaults = decoded
+            let decoded = try JSONDecoder().decode([Default].self, from: data)
+            items = decoded
+            print("Decoded dafaults.")
         } catch {
-            defaults = []
-        }
-        
-        print("Initializing Defaults")
-    }
-    
-    func save() {
-        do {
-            let encoded = try JSONEncoder().encode(defaults)
-            try encoded.write(to: savePath)
-        } catch {
-            print("Failed to save defaults: \(error.localizedDescription)")
-        }
-    }
-    
-    func delete(item: DefaultExpense) {
-        if let index = defaults.firstIndex(of: item) {
-            defaults.remove(at: index)
-            save()
+            items = []
+            print("Failed to decode defaults (\(error.localizedDescription)).")
         }
     }
 }

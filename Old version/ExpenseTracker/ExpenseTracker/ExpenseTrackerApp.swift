@@ -2,10 +2,9 @@
 //  ExpenseTrackerApp.swift
 //  ExpenseTracker
 //
-//  Created by Josef Černý on 08.08.2024.
+//  Created by Zorlix on 17.03.2024.
 //
 
-import SwiftData
 import SwiftUI
 
 @main
@@ -14,6 +13,5 @@ struct ExpenseTrackerApp: App {
         WindowGroup {
             ContentView()
         }
-        .modelContainer(for: Expense.self)
     }
 }

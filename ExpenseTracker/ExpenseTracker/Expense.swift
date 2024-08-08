@@ -2,29 +2,24 @@
 //  Expense.swift
 //  ExpenseTracker
 //
-//  Created by Zorlix on 17.03.2024.
+//  Created by Josef Černý on 08.08.2024.
 //
 
 import Foundation
+import SwiftData
 
-struct Expense: Identifiable, Codable, Equatable, Hashable, Comparable {
-    var id: UUID
+@Model
+class Expense {
     var item: String
     var type: String
     var amount: Int
-    var defaultExpense: DefaultExpense?
     var date: Date
     
-    
-    static func ==(lhs: Expense, rhs: Expense) -> Bool {
-        lhs.id == rhs.id
+    init(item: String, type: String, amount: Int, date: Date) {
+        self.item = item
+        self.type = type
+        self.amount = amount
+        self.date = date
     }
-    
-    static func <(lhs: Expense, rhs: Expense) -> Bool {
-        lhs.date > rhs.date
-    }
-    
-    #if DEBUG
-    static let example = Expense(id: UUID(), item: "Test Item", type: "Expense", amount: 123, date: .now)
-    #endif
 }
+

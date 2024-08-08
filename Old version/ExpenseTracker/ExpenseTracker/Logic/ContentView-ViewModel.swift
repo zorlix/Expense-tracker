@@ -22,8 +22,10 @@ extension ContentView {
                 let data = try Data(contentsOf: savePath)
                 let decoded = try JSONDecoder().decode([Expense].self, from: data)
                 expenses = decoded
+                print("Decoded expenses")
             } catch {
                 expenses = []
+                print("Failed to decode expenses")
             }
         }
         
