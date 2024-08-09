@@ -13,7 +13,11 @@
 		51399BD52C64E26A00718610 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 51399BD42C64E26A00718610 /* Preview Assets.xcassets */; };
 		51399BDC2C64E34900718610 /* Expense.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51399BDB2C64E34900718610 /* Expense.swift */; };
 		51399BDE2C64E4AA00718610 /* ExpenseEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51399BDD2C64E4AA00718610 /* ExpenseEditView.swift */; };
-		51399BE02C65034700718610 /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51399BDF2C65034700718610 /* Defaults.swift */; };
+		51399BE22C652B0E00718610 /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51399BE12C652B0E00718610 /* Defaults.swift */; };
+		51399BE52C660B9900718610 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51399BE42C660B9900718610 /* SettingsView.swift */; };
+		51399BE92C66141300718610 /* DefaultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51399BE82C66141300718610 /* DefaultsView.swift */; };
+		51399BEB2C66156300718610 /* AddDefaultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51399BEA2C66156300718610 /* AddDefaultView.swift */; };
+		51399BED2C66174C00718610 /* ExpensesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51399BEC2C66174C00718610 /* ExpensesView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,7 +28,11 @@
 		51399BD42C64E26A00718610 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		51399BDB2C64E34900718610 /* Expense.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Expense.swift; sourceTree = "<group>"; };
 		51399BDD2C64E4AA00718610 /* ExpenseEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseEditView.swift; sourceTree = "<group>"; };
-		51399BDF2C65034700718610 /* Defaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Defaults.swift; sourceTree = "<group>"; };
+		51399BE12C652B0E00718610 /* Defaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Defaults.swift; sourceTree = "<group>"; };
+		51399BE42C660B9900718610 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		51399BE82C66141300718610 /* DefaultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultsView.swift; sourceTree = "<group>"; };
+		51399BEA2C66156300718610 /* AddDefaultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDefaultView.swift; sourceTree = "<group>"; };
+		51399BEC2C66174C00718610 /* ExpensesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,10 +66,9 @@
 			isa = PBXGroup;
 			children = (
 				51399BCD2C64E26800718610 /* ExpenseTrackerApp.swift */,
-				51399BDB2C64E34900718610 /* Expense.swift */,
-				51399BDF2C65034700718610 /* Defaults.swift */,
-				51399BCF2C64E26800718610 /* ContentView.swift */,
-				51399BDD2C64E4AA00718610 /* ExpenseEditView.swift */,
+				51399BE62C660C9000718610 /* Main */,
+				51399BE32C660B8900718610 /* Settings */,
+				51399BE72C66135700718610 /* Models */,
 				51399BD12C64E26A00718610 /* Assets.xcassets */,
 				51399BD32C64E26A00718610 /* Preview Content */,
 			);
@@ -74,6 +81,35 @@
 				51399BD42C64E26A00718610 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		51399BE32C660B8900718610 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				51399BE42C660B9900718610 /* SettingsView.swift */,
+				51399BE82C66141300718610 /* DefaultsView.swift */,
+				51399BEA2C66156300718610 /* AddDefaultView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		51399BE62C660C9000718610 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				51399BCF2C64E26800718610 /* ContentView.swift */,
+				51399BEC2C66174C00718610 /* ExpensesView.swift */,
+				51399BDD2C64E4AA00718610 /* ExpenseEditView.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		51399BE72C66135700718610 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				51399BDB2C64E34900718610 /* Expense.swift */,
+				51399BE12C652B0E00718610 /* Defaults.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -146,10 +182,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				51399BEB2C66156300718610 /* AddDefaultView.swift in Sources */,
 				51399BDC2C64E34900718610 /* Expense.swift in Sources */,
 				51399BDE2C64E4AA00718610 /* ExpenseEditView.swift in Sources */,
-				51399BE02C65034700718610 /* Defaults.swift in Sources */,
+				51399BE22C652B0E00718610 /* Defaults.swift in Sources */,
+				51399BE52C660B9900718610 /* SettingsView.swift in Sources */,
 				51399BD02C64E26800718610 /* ContentView.swift in Sources */,
+				51399BE92C66141300718610 /* DefaultsView.swift in Sources */,
+				51399BED2C66174C00718610 /* ExpensesView.swift in Sources */,
 				51399BCE2C64E26800718610 /* ExpenseTrackerApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

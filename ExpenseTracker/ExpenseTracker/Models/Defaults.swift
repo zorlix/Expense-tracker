@@ -23,21 +23,34 @@ class Default: Identifiable, Codable, Equatable, Hashable, Comparable {
     func hash(into hasher: inout Hasher) {
         hasher.combine(id)
     }
+    
+    init(name: String, type: String) {
+        self.name = name
+        self.type = type
+    }
 }
 
 @Observable
 class Defaults {
     var items: [Default]
     
+    func saveDefault(_ def: Default) {
+        if def.name.isEmpty == false {
+            items.append(def)
+            save()
+        }
+    }
+    
+    // Saving and loading
     let savePath = URL.documentsDirectory.appending(path: "defaults.json")
     
     func save() {
         do {
             let encoded = try JSONEncoder().encode(items)
             try encoded.write(to: savePath)
-            print("Saved default")
+            print("Defaults saved.")
         } catch {
-            print("Failed to save default (\(error.localizedDescription)).")
+            print("Failed to save defaults: \(error.localizedDescription)")
         }
     }
     
@@ -46,10 +59,10 @@ class Defaults {
             let data = try Data(contentsOf: savePath)
             let decoded = try JSONDecoder().decode([Default].self, from: data)
             items = decoded
-            print("Decoded dafaults.")
+            print("Decoded defaults from storage.")
         } catch {
             items = []
-            print("Failed to decode defaults (\(error.localizedDescription)).")
+            print("Failed to decode defaults from storage: \(error.localizedDescription)")
         }
     }
 }
