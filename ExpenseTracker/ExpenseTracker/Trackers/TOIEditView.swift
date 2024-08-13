@@ -26,8 +26,7 @@ struct TOIEditView: View {
                 Toggle("Use old data", isOn: $useOldData)
                 
                 if useOldData {
-                    TextField("Old data", value: $tracker.oldAmount, format: .currency(code: "CZK"))
-                        .keyboardType(.decimalPad)
+                    TextField("Old data", value: $tracker.oldAmount, formatter: Formatter.textFieldZeroFormat)
                         .focused($textFieldFocused)
                         .onAppear {
                             UITextField.appearance().clearButtonMode = .whileEditing
@@ -55,6 +54,7 @@ struct TOIEditView: View {
                         Text($0)
                     }
                     .onDelete(perform: removeTracker)
+                    .onMove(perform: moveTracker)
                 }
             }
         }
@@ -62,11 +62,22 @@ struct TOIEditView: View {
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
             if textFieldFocused {
-                Button("Done") {
-                    textFieldFocused = false
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button("Done") {
+                        textFieldFocused = false
+                    }
                 }
             }
+            
+            ToolbarItemGroup(placement: .bottomBar) {
+                Spacer()
+                EditButton()
+            }
         }
+    }
+    
+    func moveTracker(from source: IndexSet, to destination: Int) {
+        tracker.trackingStrings.move(fromOffsets: source, toOffset: destination)
     }
     
     func removeTracker(_ indexSet: IndexSet) {

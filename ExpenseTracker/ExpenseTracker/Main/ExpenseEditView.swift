@@ -14,8 +14,8 @@ struct ExpenseEditView: View {
     @Bindable var expense: Expense
     
     @FocusState private var textFieldFocused: Bool
-    var formattedNumber: String {
-        Formatter.textFieldZeroFormat.string(from: NSNumber(value: expense.amount))!
+    var formattedAmountNumber: String  {
+        Formatter.textFieldZeroFormat.string(from: NSNumber(value: expense.amount)) ?? "Eh"
     }
     
     var body: some View {
@@ -36,6 +36,8 @@ struct ExpenseEditView: View {
                TextField("Amount", value: $expense.amount, formatter: Formatter.textFieldZeroFormat)
                    .keyboardType(.decimalPad)
                    .focused($textFieldFocused)
+               Text("Amount: \(expense.amount)")
+               Text("Formatted: \(formattedAmountNumber)")
             }
             
             Section {

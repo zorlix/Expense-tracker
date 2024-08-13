@@ -10,7 +10,7 @@ import Foundation
 extension Formatter {
     static let textFieldZeroFormat: NumberFormatter = {
         let formatter = NumberFormatter()
-        formatter.numberStyle = .currency
+        formatter.numberStyle = .none
         formatter.zeroSymbol = ""
         return formatter
     }()

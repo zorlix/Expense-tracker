@@ -20,9 +20,6 @@ struct ComparisonView: View {
     
     @State private var addAmount: Int = 0
     @FocusState private var textFieldFocused: Bool
-    var formattedNumber: String {
-        Formatter.textFieldZeroFormat.string(from: NSNumber(value: addAmount))!
-    }
     
     var body: some View {
         Form {
@@ -94,10 +91,10 @@ struct ComparisonView: View {
         if difference == 0 {
             return
         } else if difference > 0 {
-            let newExpense = Expense(item: "Unknown gain", type: "Income", amount: difference, date: .now)
+            let newExpense = Expense(item: "Neznámý zisk", type: "Income", amount: difference, date: .now)
             modelContext.insert(newExpense)
         } else if difference < 0 {
-            let newExpense = Expense(item: "Unknown expense", type: "Expense", amount: abs(difference), date: .now)
+            let newExpense = Expense(item: "Neznámá ztráta", type: "Expense", amount: abs(difference), date: .now)
             modelContext.insert(newExpense)
         }
     }

@@ -147,8 +147,14 @@ struct ExportView: View {
                 csvArray.remove(at: 0)
                 
                 for item in csvArray {
+                    if item == csvArray.last {
+                        return
+                    }
+                    
                     let itemArray = item.components(separatedBy: ",")
                     guard let amount = Int(itemArray[2]) else { return }
+                    
+                    guard itemArray[1] == "Expense" || itemArray[1] == "Income" else { return }
                     
                     let dateFormatter = DateFormatter()
                     dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
@@ -156,6 +162,7 @@ struct ExportView: View {
                     
                     let newExpense = Expense(item: itemArray[0], type: itemArray[1], amount: amount, date: date)
                     modelContext.insert(newExpense)
+                    print("Adding \(itemArray) into modelContext")
                 }
             }
         }

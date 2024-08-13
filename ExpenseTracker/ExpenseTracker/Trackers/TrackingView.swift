@@ -130,6 +130,7 @@ struct TrackingView: View {
     
     func moveTracker(from source: IndexSet, to destination: Int) {
         tracking.items.move(fromOffsets: source, toOffset: destination)
+        tracking.save()
     }
     
     func calculateExpenses(from string: String) -> Int {
