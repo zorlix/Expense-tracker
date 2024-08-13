@@ -13,11 +13,20 @@
 		51399BD52C64E26A00718610 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 51399BD42C64E26A00718610 /* Preview Assets.xcassets */; };
 		51399BDC2C64E34900718610 /* Expense.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51399BDB2C64E34900718610 /* Expense.swift */; };
 		51399BDE2C64E4AA00718610 /* ExpenseEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51399BDD2C64E4AA00718610 /* ExpenseEditView.swift */; };
-		51399BE22C652B0E00718610 /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51399BE12C652B0E00718610 /* Defaults.swift */; };
-		51399BE52C660B9900718610 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51399BE42C660B9900718610 /* SettingsView.swift */; };
-		51399BE92C66141300718610 /* DefaultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51399BE82C66141300718610 /* DefaultsView.swift */; };
-		51399BEB2C66156300718610 /* AddDefaultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51399BEA2C66156300718610 /* AddDefaultView.swift */; };
 		51399BED2C66174C00718610 /* ExpensesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51399BEC2C66174C00718610 /* ExpensesView.swift */; };
+		51399BF12C66629F00718610 /* DateSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51399BF02C66629F00718610 /* DateSelectionView.swift */; };
+		51399BF42C66DB9400718610 /* AppStorageDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51399BF32C66DB9400718610 /* AppStorageDate.swift */; };
+		51399BF72C66DC7D00718610 /* TrackingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51399BF62C66DC7D00718610 /* TrackingView.swift */; };
+		51399BF92C66E15900718610 /* TrackerOfItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51399BF82C66E15900718610 /* TrackerOfItems.swift */; };
+		51399BFD2C676ECD00718610 /* TOIEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51399BFC2C676ECD00718610 /* TOIEditView.swift */; };
+		51399BFF2C6792E300718610 /* Tracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51399BFE2C6792E300718610 /* Tracking.swift */; };
+		51399C012C6793BE00718610 /* TrackerOfTrackers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51399C002C6793BE00718610 /* TrackerOfTrackers.swift */; };
+		51399C032C67940300718610 /* Tracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51399C022C67940300718610 /* Tracker.swift */; };
+		51399C052C67AF3A00718610 /* TOTEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51399C042C67AF3A00718610 /* TOTEditView.swift */; };
+		51399C232C68ACBA00718610 /* ComparisonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51399C222C68ACBA00718610 /* ComparisonView.swift */; };
+		51399C292C6A0D5200718610 /* ExportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51399C282C6A0D5200718610 /* ExportView.swift */; };
+		51399C2B2C6A275600718610 /* PurgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51399C2A2C6A275600718610 /* PurgeView.swift */; };
+		51399C2E2C6A3C0800718610 /* Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51399C2D2C6A3C0800718610 /* Formatter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,11 +37,20 @@
 		51399BD42C64E26A00718610 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		51399BDB2C64E34900718610 /* Expense.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Expense.swift; sourceTree = "<group>"; };
 		51399BDD2C64E4AA00718610 /* ExpenseEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseEditView.swift; sourceTree = "<group>"; };
-		51399BE12C652B0E00718610 /* Defaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Defaults.swift; sourceTree = "<group>"; };
-		51399BE42C660B9900718610 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
-		51399BE82C66141300718610 /* DefaultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultsView.swift; sourceTree = "<group>"; };
-		51399BEA2C66156300718610 /* AddDefaultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDefaultView.swift; sourceTree = "<group>"; };
 		51399BEC2C66174C00718610 /* ExpensesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesView.swift; sourceTree = "<group>"; };
+		51399BF02C66629F00718610 /* DateSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateSelectionView.swift; sourceTree = "<group>"; };
+		51399BF32C66DB9400718610 /* AppStorageDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStorageDate.swift; sourceTree = "<group>"; };
+		51399BF62C66DC7D00718610 /* TrackingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackingView.swift; sourceTree = "<group>"; };
+		51399BF82C66E15900718610 /* TrackerOfItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackerOfItems.swift; sourceTree = "<group>"; };
+		51399BFC2C676ECD00718610 /* TOIEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TOIEditView.swift; sourceTree = "<group>"; };
+		51399BFE2C6792E300718610 /* Tracking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tracking.swift; sourceTree = "<group>"; };
+		51399C002C6793BE00718610 /* TrackerOfTrackers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackerOfTrackers.swift; sourceTree = "<group>"; };
+		51399C022C67940300718610 /* Tracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tracker.swift; sourceTree = "<group>"; };
+		51399C042C67AF3A00718610 /* TOTEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TOTEditView.swift; sourceTree = "<group>"; };
+		51399C222C68ACBA00718610 /* ComparisonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComparisonView.swift; sourceTree = "<group>"; };
+		51399C282C6A0D5200718610 /* ExportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportView.swift; sourceTree = "<group>"; };
+		51399C2A2C6A275600718610 /* PurgeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurgeView.swift; sourceTree = "<group>"; };
+		51399C2D2C6A3C0800718610 /* Formatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,9 +84,13 @@
 			isa = PBXGroup;
 			children = (
 				51399BCD2C64E26800718610 /* ExpenseTrackerApp.swift */,
-				51399BE62C660C9000718610 /* Main */,
-				51399BE32C660B8900718610 /* Settings */,
-				51399BE72C66135700718610 /* Models */,
+				51399BDB2C64E34900718610 /* Expense.swift */,
+				51399BF22C669FA300718610 /* Main */,
+				51399BF52C66DC6900718610 /* Trackers */,
+				51399C222C68ACBA00718610 /* ComparisonView.swift */,
+				51399C282C6A0D5200718610 /* ExportView.swift */,
+				51399C2A2C6A275600718610 /* PurgeView.swift */,
+				51399C2C2C6A3BE900718610 /* Extensions */,
 				51399BD12C64E26A00718610 /* Assets.xcassets */,
 				51399BD32C64E26A00718610 /* Preview Content */,
 			);
@@ -83,33 +105,38 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		51399BE32C660B8900718610 /* Settings */ = {
-			isa = PBXGroup;
-			children = (
-				51399BE42C660B9900718610 /* SettingsView.swift */,
-				51399BE82C66141300718610 /* DefaultsView.swift */,
-				51399BEA2C66156300718610 /* AddDefaultView.swift */,
-			);
-			path = Settings;
-			sourceTree = "<group>";
-		};
-		51399BE62C660C9000718610 /* Main */ = {
+		51399BF22C669FA300718610 /* Main */ = {
 			isa = PBXGroup;
 			children = (
 				51399BCF2C64E26800718610 /* ContentView.swift */,
 				51399BEC2C66174C00718610 /* ExpensesView.swift */,
+				51399BF02C66629F00718610 /* DateSelectionView.swift */,
 				51399BDD2C64E4AA00718610 /* ExpenseEditView.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
 		};
-		51399BE72C66135700718610 /* Models */ = {
+		51399BF52C66DC6900718610 /* Trackers */ = {
 			isa = PBXGroup;
 			children = (
-				51399BDB2C64E34900718610 /* Expense.swift */,
-				51399BE12C652B0E00718610 /* Defaults.swift */,
+				51399C022C67940300718610 /* Tracker.swift */,
+				51399BF82C66E15900718610 /* TrackerOfItems.swift */,
+				51399C002C6793BE00718610 /* TrackerOfTrackers.swift */,
+				51399BFE2C6792E300718610 /* Tracking.swift */,
+				51399BF62C66DC7D00718610 /* TrackingView.swift */,
+				51399BFC2C676ECD00718610 /* TOIEditView.swift */,
+				51399C042C67AF3A00718610 /* TOTEditView.swift */,
 			);
-			path = Models;
+			path = Trackers;
+			sourceTree = "<group>";
+		};
+		51399C2C2C6A3BE900718610 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				51399BF32C66DB9400718610 /* AppStorageDate.swift */,
+				51399C2D2C6A3C0800718610 /* Formatter.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -182,14 +209,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				51399BEB2C66156300718610 /* AddDefaultView.swift in Sources */,
 				51399BDC2C64E34900718610 /* Expense.swift in Sources */,
+				51399C032C67940300718610 /* Tracker.swift in Sources */,
+				51399BFF2C6792E300718610 /* Tracking.swift in Sources */,
+				51399BF12C66629F00718610 /* DateSelectionView.swift in Sources */,
+				51399C052C67AF3A00718610 /* TOTEditView.swift in Sources */,
 				51399BDE2C64E4AA00718610 /* ExpenseEditView.swift in Sources */,
-				51399BE22C652B0E00718610 /* Defaults.swift in Sources */,
-				51399BE52C660B9900718610 /* SettingsView.swift in Sources */,
+				51399BF92C66E15900718610 /* TrackerOfItems.swift in Sources */,
+				51399C232C68ACBA00718610 /* ComparisonView.swift in Sources */,
+				51399C292C6A0D5200718610 /* ExportView.swift in Sources */,
+				51399C2B2C6A275600718610 /* PurgeView.swift in Sources */,
+				51399BF72C66DC7D00718610 /* TrackingView.swift in Sources */,
+				51399C012C6793BE00718610 /* TrackerOfTrackers.swift in Sources */,
+				51399C2E2C6A3C0800718610 /* Formatter.swift in Sources */,
+				51399BFD2C676ECD00718610 /* TOIEditView.swift in Sources */,
 				51399BD02C64E26800718610 /* ContentView.swift in Sources */,
-				51399BE92C66141300718610 /* DefaultsView.swift in Sources */,
 				51399BED2C66174C00718610 /* ExpensesView.swift in Sources */,
+				51399BF42C66DB9400718610 /* AppStorageDate.swift in Sources */,
 				51399BCE2C64E26800718610 /* ExpenseTrackerApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

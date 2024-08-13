@@ -95,7 +95,7 @@ struct ContentView: View {
                 }
             }
             .onAppear(perform: viewModel.sort)
-            .onChange(of: viewModel.expenses, viewModel.checkForEmpty)
+//            .onChange(of: viewModel.expenses, viewModel.checkForEmpty)
             .fileImporter(isPresented: $viewModel.importFile, allowedContentTypes: [.json]) { result in
                 switch result {
                 case .success(let fileURL):

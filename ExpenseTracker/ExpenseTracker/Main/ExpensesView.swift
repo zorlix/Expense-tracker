@@ -12,6 +12,8 @@ struct ExpensesView: View {
     @Environment(\.modelContext) var modelContext
     @Query var expenses: [Expense]
     
+    @Binding var changeTotal: Bool
+    
     var body: some View {
         List {
             ForEach(expenses) { expense in
@@ -33,9 +35,10 @@ struct ExpensesView: View {
                 }
             }
             .onDelete(perform: deleteExpense)
-        }
-        .navigationDestination(for: Expense.self) { expense in
-            ExpenseEditView(expense: expense)
+            .onAppear(perform: purgeEmpty)
+            .onChange(of: expenses) {
+                changeTotal = true
+            }
         }
     }
     
@@ -46,7 +49,37 @@ struct ExpensesView: View {
         }
     }
     
-    init() {
-        _expenses = Query(sort: \Expense.date, order: .reverse)
+    func purgeEmpty() {
+        let fetchDescriptor = FetchDescriptor<Expense>(predicate: #Predicate { expense in
+            expense.item == ""
+        })
+        guard let expenses = try? modelContext.fetch(fetchDescriptor) else { return }
+        
+        for expense in expenses {
+            modelContext.delete(expense)
+        }
+    }
+    
+    init(changeTotal: Binding<Bool>, searchString: String, sortOrder: [SortDescriptor<Expense>], limitDate: Bool, startingDate: Date, endingDate: Date) {
+        self._changeTotal = changeTotal
+        _expenses = Query(filter: #Predicate { expense in
+            if limitDate == true {
+                if expense.date > startingDate && expense.date < endingDate {
+                    if searchString.isEmpty {
+                        true
+                    } else {
+                        expense.item.localizedStandardContains(searchString)
+                    }
+                } else {
+                    false
+                }
+            } else {
+                if searchString.isEmpty {
+                    true
+                } else {
+                    expense.item.localizedStandardContains(searchString)
+                }
+            }
+        }, sort: sortOrder)
     }
 }
